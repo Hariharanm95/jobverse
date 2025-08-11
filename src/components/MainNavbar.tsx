@@ -1,21 +1,22 @@
 "use client";
 import React from "react";
-import { FaHome, FaUsers, FaBriefcase } from "react-icons/fa";
 
-export default function MainNavbar() {
+interface MainNavbarProps {
+  onCreateJobClick: () => void;
+}
+
+export default function MainNavbar({ onCreateJobClick }: MainNavbarProps) {
   return (
     <nav className="fixed top-7 left-1/2 -translate-x-1/2 bg-white shadow-sm z-50 rounded-full border border-gray-200">
       <div className="flex items-center justify-between py-3 px-6 space-x-8">
-        
-       {/* Logo */}
+        {/* Logo */}
         <div className="flex items-center text-sm space-x-2 cursor-pointer">
-        <img
+          <img
             src="/logo.jpg"
             alt="Logo"
             className="h-8 w-8 rounded-full object-cover"
-        />
+          />
         </div>
-
 
         {/* Links */}
         <ul className="flex items-center space-x-6 text-gray-800 text-sm">
@@ -27,7 +28,10 @@ export default function MainNavbar() {
         </ul>
 
         {/* Create Jobs Button */}
-        <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full text-xs shadow hover:opacity-90">
+        <button
+          onClick={onCreateJobClick}
+          className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full text-xs shadow hover:opacity-90"
+        >
           Create Jobs
         </button>
       </div>

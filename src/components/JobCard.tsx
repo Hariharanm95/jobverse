@@ -127,8 +127,8 @@ export const JobCard = ({
 
 {/* Description */}
 <ul className="mt-4 text-gray-600 text-xs list-disc pl-5 marker:text-gray-600">
-  {(jobDescription.length > 120
-    ? jobDescription.slice(0, 120) + "..."
+  {(jobDescription.length > 80
+    ? jobDescription.slice(0, 80) + "..."
     : jobDescription
   )
     .split(". ")
@@ -142,8 +142,8 @@ export const JobCard = ({
 
 {/* Requirements */}
 <ul className="mt-2 text-gray-600 text-xs list-disc pl-5 marker:text-gray-600">
-  {(requirements.length > 120
-    ? requirements.slice(0, 120) + "..."
+  {(requirements.length > 80
+    ? requirements.slice(0, 80) + "..."
     : requirements
   )
     .split(". ")
